@@ -7,3 +7,6 @@ def _is_number(value):
         return True
     except ValueError:
         return False
+    
+def _calculate(num1, operator, num2):
+    if operator == '+':
