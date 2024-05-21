@@ -33,3 +33,8 @@ def _evaluate_expression(expression):
 # check for consecutive operators or invalid terms
     if any(expression[i] in '+-*/rRxX' and expression[i + 1] in '+-*/rRxX=' for i in range(len(expression) - 1)):
         raise ValueError("Invalid expression")
+    
+# handle parentheses
+    while '(' in expression:
+        # find the innermost set of parentheses
+        start = expression.rfind('(')
