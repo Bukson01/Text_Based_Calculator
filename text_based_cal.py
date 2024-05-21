@@ -23,3 +23,5 @@ def _calculate(num1, operator, num2):
         return num2 ** (1 / num1)
     elif operator.lower() == 'x':
         return num1 ** num2
+    else:
+        raise ValueError(f"Invalid operator: {operator}")
