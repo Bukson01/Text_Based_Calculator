@@ -69,3 +69,9 @@ def _evaluate_expression(expression):
         _result = _calculate(_result, operators[i], operands[i + 1])
 
     return _result
+
+def run():
+    print("Welcome to the Text-Based Calculator")
+    while True:
+        try:
+            expression = input("Input: ")
