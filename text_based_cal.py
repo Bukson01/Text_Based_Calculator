@@ -41,3 +41,7 @@ def _evaluate_expression(expression):
         end = expression.find(')', start)
         if end == -1:
             raise ValueError("Invalid expression")
+
+        # evaluate the expression inside the parentheses
+        sub_expr = expression[start + 1:end]
+        sub_result = _evaluate_expression(sub_expr)
