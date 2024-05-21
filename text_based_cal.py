@@ -29,3 +29,7 @@ def _calculate(num1, operator, num2):
 def _evaluate_expression(expression):
     # remove whitespace from the expression
     expression = expression.replace(' ', '')
+
+# check for consecutive operators or invalid terms
+    if any(expression[i] in '+-*/rRxX' and expression[i + 1] in '+-*/rRxX=' for i in range(len(expression) - 1)):
+        raise ValueError("Invalid expression")
