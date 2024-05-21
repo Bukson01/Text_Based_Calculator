@@ -49,7 +49,23 @@ def _evaluate_expression(expression):
         # replace the parentheses and sub-expression with the result
         expression = expression[:start] + str(sub_result) + expression[end + 1:]
         
-        # split the expression into operands and operators
-        operands = []
-        operators = []
-        num = ''
+    # split the expression into operands and operators
+    operands = []
+    operators = []
+    num = ''
+    for char in expression:
+        if char in '+-*/rRxX=':
+            if num:
+                operands.append(float(num))
+                num = ''
+            operators.append(char)
+        else:
+            num += char
+    operands.append(float(num))
+
+    # calculate the result
+    _result = operands[0]
+    for i in range(len(operators)):
+        _result = _calculate(_result, operators[i], operands[i + 1])
+
+    return _result
