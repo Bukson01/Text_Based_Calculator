@@ -57,4 +57,10 @@ The calculator handles various errors, including:
 To run the script, use the following command:
 
 ```sh
-python calculator.py
+python text_based_cal.py
+
+
+# Acknowledgements
+This project was inspired by the need for a simple text-based calculator for educational purposes.
+
+# License
