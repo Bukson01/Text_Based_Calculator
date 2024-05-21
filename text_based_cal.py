@@ -15,7 +15,11 @@ def _calculate(num1, operator, num2):
         return num1 - num2
     elif operator == '*':
         return num1 * num2
-     elif operator == '/':
+    elif operator == '/':
         if num2 == 0:
             raise ZeroDivisionError("Division by zero is not allowed")
         return num1 / num2
+    elif operator.lower() == 'r':
+        return num2 ** (1 / num1)
+    elif operator.lower() == 'x':
+        return num1 ** num2
