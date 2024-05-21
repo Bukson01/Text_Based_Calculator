@@ -83,3 +83,10 @@ def run():
                 expression = expression[:expression.index('=')]
                 _result=_evaluate_expression(expression)
                 print(f"{expression}= {int(_result) if _result.is_integer() else round(_result, 5)}")
+        except Exception as e:
+            print(f"Error: {e}")
+    print("Thank you for using the Text-Based Calculator")
+    
+    
+if __name__ == '__main__':
+    run()
