@@ -25,3 +25,7 @@ def _calculate(num1, operator, num2):
         return num1 ** num2
     else:
         raise ValueError(f"Invalid operator: {operator}")
+
+def _evaluate_expression(expression):
+    # remove whitespace from the expression
+    expression = expression.replace(' ', '')
