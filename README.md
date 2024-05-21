@@ -55,9 +55,7 @@ The calculator handles various errors, including:
 ## Running the Script
 
 To run the script, use the following command:
-
-```sh
-python text_based_cal.py
+ python text_based_cal.py
 
 
 # Acknowledgements
