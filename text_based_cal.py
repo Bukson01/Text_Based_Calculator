@@ -38,3 +38,6 @@ def _evaluate_expression(expression):
     while '(' in expression:
         # find the innermost set of parentheses
         start = expression.rfind('(')
+        end = expression.find(')', start)
+        if end == -1:
+            raise ValueError("Invalid expression")
