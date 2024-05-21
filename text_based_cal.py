@@ -30,11 +30,11 @@ def _evaluate_expression(expression):
     # remove whitespace from the expression
     expression = expression.replace(' ', '')
 
-# check for consecutive operators or invalid terms
+    # check for consecutive operators or invalid terms
     if any(expression[i] in '+-*/rRxX' and expression[i + 1] in '+-*/rRxX=' for i in range(len(expression) - 1)):
         raise ValueError("Invalid expression")
     
-# handle parentheses
+    # handle parentheses
     while '(' in expression:
         # find the innermost set of parentheses
         start = expression.rfind('(')
@@ -45,3 +45,11 @@ def _evaluate_expression(expression):
         # evaluate the expression inside the parentheses
         sub_expr = expression[start + 1:end]
         sub_result = _evaluate_expression(sub_expr)
+
+        # replace the parentheses and sub-expression with the result
+        expression = expression[:start] + str(sub_result) + expression[end + 1:]
+        
+        # split the expression into operands and operators
+        operands = []
+        operators = []
+        num = ''
