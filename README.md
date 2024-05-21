@@ -64,3 +64,6 @@ python text_based_cal.py
 This project was inspired by the need for a simple text-based calculator for educational purposes.
 
 # License
+
+
+This `README.md` file provides a detailed overview of the text-based calculator project, including features, usage instructions, code explanations, error handling, and running the script.
