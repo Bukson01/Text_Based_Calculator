@@ -75,3 +75,11 @@ def run():
     while True:
         try:
             expression = input("Input: ")
+            if expression.lower() in ['e', 'q']:
+                break
+            elif '=' not in expression:
+                raise ValueError("Expression must contain an equal sign")
+            else:
+                expression = expression[:expression.index('=')]
+                _result=_evaluate_expression(expression)
+                print(f"{expression}= {int(_result) if _result.is_integer() else round(_result, 5)}")
